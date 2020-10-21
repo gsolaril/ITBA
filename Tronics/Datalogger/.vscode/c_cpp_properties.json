@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\Coco\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
+                "C:\\Users\\Coco\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.22\\**"
+            ],
+            "forcedInclude": [
+                "C:\\Users\\Coco\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.22\\cores\\arduino\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:\\Users\\Coco\\MinGW\\mingw64\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "gnu++14"
+        }
+    ],
+    "version": 4
+}

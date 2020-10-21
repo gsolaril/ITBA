@@ -1,0 +1,44 @@
+assignin('base','W','W')
+assignin('base','Z','Z')
+
+Lx = evalin('base','Lx');
+Ly = evalin('base','Ly');
+t  = evalin('base','t');
+
+Q     = evalin('base','Q');
+nnod  = evalin('base','nnod');
+nele  = evalin('base','nele');
+Coord = evalin('base','Coord');
+
+Elems = evalin('base','Elems');
+
+
+%% -------------------------------------------------------------------- %%
+
+Disp  = reshape(D',2,[])'*(W*t*(LH-LD-LR)/10e3);
+Dnrm  = (Disp(:,1).^2 + Disp(:,2).^2).^(1/2);
+
+Cdisp = Coord + Disp;
+Czoom = Coord + Disp*(10^Z);
+
+hold on
+grid on
+
+for iele = 1:nele
+    Nele = [ Elems(iele,:)     Elems(iele,1) ];
+    if (Q == 9)
+        Nele([9 10]) = Nele([10 9]);
+    end
+    Xele = Coord(Nele,:);
+    plot(Xele(:,1),Xele(:,2),':r','LineWidth',1.5)
+    Xfin = Czoom(Nele,:);
+    plot(Xfin(:,1),Xfin(:,2),'-k','LineWidth',1.5)
+end
+axis equal
+
+ %% ------------------------------------------------------------------ %%
+
+assignin('base','Disp',Disp)
+assignin('base','Dnrm',Dnrm)
+assignin('base','Cdisp',Cdisp)
+assignin('base','Czoom',Czoom)
